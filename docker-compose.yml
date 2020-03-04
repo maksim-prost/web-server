@@ -4,11 +4,9 @@ services:
   flask:
     build: flask/
     command: gunicorn -w 1 -b 0.0.0.0:5000 hello:app --reload
-      # flask run --host=0.0.0.0
     environment:
       - FLASK_APP=hello.py 
       - PYTHONUNBUFFERED=True
-      # - FLASK_DEBUG=1
     ports: 
       - "5000:5000"
     volumes: 
